@@ -1,5 +1,7 @@
-import "./messenger.css"
-import Topbar from "../../components/topbar/Topbar"
+import "./messenger.css";
+import Conversation from "../../components/conversations/Conversation";
+import Topbar from "../../components/topbar/Topbar";
+import Message  from "../../components/message/Message";
 
 export default function Messenger(){
     
@@ -9,12 +11,24 @@ export default function Messenger(){
         <div className="messenger">
             <div className="chatMenu">
                 <div className="chatMenuWrapper">
-                    Menu
+                    <input placeholder="Search for Friends" className="chatMenuInput"/>
+                    <Conversation/>
+                    <Conversation/>
+                    <Conversation/>
+                    <Conversation/>
+                    <Conversation/>
                 </div>
             </div>
             <div className="chatBox">
                 <div className="chatBoxWrapper">
-                    Box
+                    <div className="chatBoxTop">
+                        <Message/>
+                        <Message/>
+                        <Message/>
+                    </div>
+                    <div className="chatBoxBottom">
+
+                    </div>
                 </div>
             </div>
             <div className="chatOnline">
