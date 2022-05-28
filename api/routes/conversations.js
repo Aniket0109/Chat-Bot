@@ -27,4 +27,19 @@ router.get("/:userId", async (req, res)=>{
         res.status(500).json(err);
     }
 });
+
+// get conv includes two userIds
+router.get("/find/:firstUserId/:secondUserId", async (req, res) =>{
+
+    try{
+        const conversation = await Conversation.find({
+            members : {$in : [req.params.firstUserId, req.params.secondUserId]},
+        });
+        res.status(200).json(conversation);
+    } catch(err){
+        res.status(500).json(err);
+    }
+});
+
+
 module.exports = router;
